@@ -9,7 +9,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		'tsserver',
 		'eslint',
-		'sumneko_lua',
+		'lua_ls',
 		'rust_analyzer',
 		"bashls",
 		"clangd",
@@ -37,6 +37,8 @@ require("mason-lspconfig").setup({
 
 local cmp = require("cmp")
 local cmp_action = require('lsp-zero').cmp_action()
+local cmp_select = {behavior = cmp.SelectBehavior.Select}
+
 cmp.setup({
 	window = {
 		completion = cmp.config.window.bordered(),
@@ -49,8 +51,6 @@ cmp.setup({
 		["<C-Space>"] = cmp.mapping.complete(),
 	})
 })
-
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
 
 lsp.set_preferences({
 	sign_icons = { }

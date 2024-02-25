@@ -1,2 +1,1 @@
 require("kuba")
-print("hello")
